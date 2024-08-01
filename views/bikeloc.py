@@ -4,6 +4,7 @@ import streamlit as st
 import requests
 import geopy.distance  # conda install geopy -y
 import dotenv
+import pydeck as pdk
 
 # .env 파일을 읽어서 환경변수로 설정
 dotenv.load_dotenv()
@@ -120,6 +121,39 @@ def createPage():
         if st.button("거리 계산"):
             loc = get_distance(start_lat, start_lon, end_lat, end_lon)
             st.write(f"출발지와 도착지 사이의 거리는 {loc:.2f} km 입니다.")
+
+            # pydeck을 이용한 지도 시각화
+            # 경로 데이터 생성
+            data = pd.DataFrame({
+                'path': [[
+                    [start_lon, start_lat],  # [longitude, latitude]
+                    [end_lon, end_lat]
+                ]]
+            })
+
+            # Deck 구성
+            st.pydeck_chart(pdk.Deck(
+                map_style='mapbox://styles/mapbox/streets-v11',
+                initial_view_state=pdk.ViewState(
+                    latitude=(start_lat + end_lat) / 2,
+                    longitude=(start_lon + end_lon) / 2,
+                    zoom=11,
+                    pitch=0,
+                ),
+                layers=[
+                    pdk.Layer(
+                        'PathLayer',
+                        data=data,
+                        get_path='path',
+                        get_color='[0, 0, 255, 160]',
+                        width_scale=10,
+                        width_min_pixels=2,
+                        width_max_pixels=10,
+                        pickable=True,
+                        auto_highlight=True
+                    )
+                ]
+            ))
     else:
         # st.write("구 이름을 입력하세요.")
         pass
