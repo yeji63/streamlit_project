@@ -16,8 +16,7 @@
 - `requests` API 요청
 
 ## Example Page
-
-[streamlit_cycle](https://practice001.streamlit.app/)
+[streamlit_page](https://hfamr9ofbqv5cjysnd5dh6.streamlit.app/)
 
 ## 따릉이 데이터 시각화
 - 따릉이 데이터를 활용하여 시각화를 진행합니다.
