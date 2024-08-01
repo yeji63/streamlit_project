@@ -1,3 +1,12 @@
+### Members
+
+[eunchaipark](https://github.com/eunchaipark)
+[awesome98](https://github.com/awesome98)
+[yeji63](https://github.com/yeji63)
+[dongmiii](https://github.com/dongmiii)
+[eunhyea](https://github.com/eunhyea)
+[SukbeomH](https://github.com/SukbeomH)
+
 # streamlit_practice :: 따릉이 데이터 시각화
 
 - `streamlit`을 활용하여 따릉이 데이터를 시각화
