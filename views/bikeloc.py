@@ -13,9 +13,9 @@ url = f'http://openapi.seoul.go.kr:8088/{os.getenv("OPEN_API_KEY")}/json/bikeSta
 
 def createPage():
 
-    response = requests.get(url)
-    response.encoding = "utf-8"
-    data = response.json()  # json의 dict화
+    res = requests.get(url)
+    res.encoding = "utf-8"
+    data = res.json()  # json의 dict화
 
     # 필요한 데이터 추출
     bike_data = data["bikeStationMaster"]["row"]

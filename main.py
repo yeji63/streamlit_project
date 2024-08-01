@@ -1,6 +1,5 @@
 import streamlit as st
 from streamlit_option_menu import option_menu
-import requests
 import pydeck as pdk
 from views import bikeinfo, bikeloc
 
