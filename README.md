@@ -7,7 +7,7 @@
 - [@eunhyea](https://github.com/eunhyea)
 - [@SukbeomH](https://github.com/SukbeomH)
 
-# streamlit_practice :: 따릉이 데이터 시각화
+# streamlit_project :: 따릉이 데이터 시각화
 
 - `streamlit`을 활용하여 따릉이 데이터를 시각화
 - `pandas` 데이터 전처리, 데이터프레임 생성
