@@ -12,9 +12,9 @@ dotenv.load_dotenv()
 url = f'http://openapi.seoul.go.kr:8088/{os.getenv("OPEN_API_KEY")}/json/bikeStationMaster/1/1000/'
 
 
-response = requests.get(url)
-response.encoding = "utf-8"
-data = response.json()  # json의 dict화
+res = requests.get(url)
+res.encoding = "utf-8"
+data = res.json()  # json의 dict화
 # print(data)
 
 # 필요한 데이터 추출
