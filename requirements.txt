@@ -8,7 +8,6 @@ html5lib
 PyMySQL
 sqlalchemy
 python-dotenv
-openai
 streamlit-option-menu
 pydeck
 geopy

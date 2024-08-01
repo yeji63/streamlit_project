@@ -20,7 +20,7 @@ def get_bike_station_data(start_num: int, end_num: int) -> dict:
         json: 공공자전거 따릉이 대여소 정보(대여소_ID, 주소1, 주소2, 위도, 경도)
     """
     url = f'http://openapi.seoul.go.kr:8088/{os.getenv("OPEN_API_KEY")}/json/bikeStationMaster/{start_num}/{end_num}/'
-    response = requests.get(url)
+    response = requests.get(url, timeout=10)
     return response.json()
 
 
@@ -95,7 +95,7 @@ def convert_address_to_lat_lon(address: str) -> tuple:
         "type": "PARCEL",
         "key": os.getenv("VWORLD_API_KEY"),
     }
-    res = requests.get(apiurl, params=params)
+    res = requests.get(apiurl, params=params, timeout=10)
     return tuple(res.json()["response"]["result"]["point"])
 
 
