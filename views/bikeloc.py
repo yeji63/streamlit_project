@@ -13,7 +13,7 @@ url = f'http://openapi.seoul.go.kr:8088/{os.getenv("OPEN_API_KEY")}/json/bikeSta
 
 def createPage():
 
-    res = requests.get(url)
+    res = requests.get(url, timeout=10)
     res.encoding = "utf-8"
     data = res.json()  # json의 dict화
 

@@ -1,7 +1,6 @@
 import os
 import pandas as pd
 import streamlit as st
-from streamlit_option_menu import option_menu
 import requests
 import pydeck as pdk
 import dotenv
@@ -12,7 +11,7 @@ dotenv.load_dotenv()
 url = f'http://openapi.seoul.go.kr:8088/{os.getenv("OPEN_API_KEY")}/json/bikeStationMaster/1/1000/'
 
 
-res = requests.get(url)
+res = requests.get(url, timeout=10)
 res.encoding = "utf-8"
 data = res.json()  # json의 dict화
 # print(data)
